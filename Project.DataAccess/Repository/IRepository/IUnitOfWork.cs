@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project.DataAccess.Repository.IRepository
 {
-    internal interface Interface1
+    public interface IUnitOfWork
     {
+        ICategoryRepository Category { get; }
+        void Save();
+
     }
 }

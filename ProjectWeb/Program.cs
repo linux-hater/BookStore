@@ -1,3 +1,5 @@
+using Project.DataAccess.Repository;
+using Project.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Project.DataAcess.Data;
 
@@ -8,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options=> 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
