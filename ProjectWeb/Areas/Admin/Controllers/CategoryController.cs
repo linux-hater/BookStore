@@ -10,8 +10,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project.DataAcess.Data;
 using Project.DataAccess.Repository.IRepository;
 
-namespace ASP_NET_core_Project.Controllers
+namespace ProjectWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -28,7 +29,7 @@ namespace ASP_NET_core_Project.Controllers
 
         public IActionResult Create()
         {
-            return View(new Category()); 
+            return View(new Category());
         }
 
         [HttpPost]
@@ -39,7 +40,7 @@ namespace ASP_NET_core_Project.Controllers
             //     ModelState.AddModelError("name", "The Display Order cannot be exactly match the Name. ");
             // }
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Add(obj);
                 _unitOfWork.Save();
@@ -51,7 +52,7 @@ namespace ASP_NET_core_Project.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if(id==null || id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
@@ -104,4 +105,4 @@ namespace ASP_NET_core_Project.Controllers
             return RedirectToAction("Index");
         }
     }
-} 
+}
