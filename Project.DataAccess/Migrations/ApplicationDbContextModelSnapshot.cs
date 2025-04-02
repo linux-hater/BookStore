@@ -21,7 +21,7 @@ namespace Project.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ASP_NET_core_Project.Models.Category", b =>
+            modelBuilder.Entity("Project.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASP_NET_core_Project.Models
+namespace Project.Models
 {
     public class Category
     {
@@ -14,7 +14,7 @@ namespace ASP_NET_core_Project.Models
         [Required]
         [MaxLength(30)]
         [DisplayName("Category Name")]
-        public string Name { get; set; } = "";
+        public string Name { get; set; }
         [DisplayName("Display Order")]
         [Range(1,100, ErrorMessage = "Display Order must be between 1-100")]
         public int DisplayOrder { get; set; }
