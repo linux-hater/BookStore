@@ -7,8 +7,8 @@ using Project.Models;
 
 namespace Project.DataAccess.Repository.IRepository
 {
-    public interface ICategoryRepository : IRepo<Category>
+    public interface IProductRepository : IRepo<Product>
     {
-        void Update(Category obj);
+        void Update(Product obj);
     }
 }
