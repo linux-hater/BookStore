@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
+    <Compile Remove="wwwroot\NewFolder1\**" />
+    <Compile Remove="wwwroot\NewFolder2\**" />
+    <Compile Remove="wwwroot\NewFolder3\**" />
+    <Content Remove="Controllers\**" />
+    <Content Remove="wwwroot\NewFolder1\**" />
+    <Content Remove="wwwroot\NewFolder2\**" />
+    <Content Remove="wwwroot\NewFolder3\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder1\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder2\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder3\**" />
+    <None Remove="Controllers\**" />
+    <None Remove="wwwroot\NewFolder1\**" />
+    <None Remove="wwwroot\NewFolder2\**" />
+    <None Remove="wwwroot\NewFolder3\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SQLServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
@@ -23,19 +42,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\images\product\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Areas\Admin\Views\Product\Create.cshtml">
+    <Content Update="Areas\Admin\Views\Product\Upsert.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Areas\Admin\Views\Product\Delete.cshtml">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="Areas\Admin\Views\Product\Edit.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
