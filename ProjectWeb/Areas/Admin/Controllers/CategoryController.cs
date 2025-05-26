@@ -9,10 +9,14 @@ using Project.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project.DataAcess.Data;
 using Project.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
+using Project.Utility;
 
 namespace ProjectWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
+
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
