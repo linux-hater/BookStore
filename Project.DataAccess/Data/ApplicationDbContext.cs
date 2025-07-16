@@ -13,7 +13,6 @@ namespace Project.DataAcess.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Company> Companies { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,11 +23,6 @@ namespace Project.DataAcess.Data
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
-            );
-
-            modelBuilder.Entity<Company>().HasData(
-                new Company { Id = 1, Name = "Company 1", PhoneNumber = 777238123 , StreetAdress = "Tehc St", City = "City1", State = "NY", PostalCode = "0002001" },
-                new Company { Id = 2, Name = "Vivid Books", PhoneNumber = 123742121 , StreetAdress = "Sol St", City = "Vid City", State = "IL", PostalCode = "0002001" }
             );
 
             modelBuilder.Entity<Product>().HasData(
