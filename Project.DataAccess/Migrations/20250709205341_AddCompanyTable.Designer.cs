@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.DataAcess.Data;
 
@@ -11,9 +12,11 @@ using Project.DataAcess.Data;
 namespace Project.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250709205341_AddCompanyTable")]
+    partial class AddCompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -304,28 +307,6 @@ namespace Project.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "City1",
-                            Name = "Company 1",
-                            PhoneNumber = 777238123,
-                            PostalCode = "0002001",
-                            State = "NY",
-                            StreetAdress = "Tehc St"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Vid City",
-                            Name = "Vivid Books",
-                            PhoneNumber = 123742121,
-                            PostalCode = "0002001",
-                            State = "IL",
-                            StreetAdress = "Sol St"
-                        });
                 });
 
             modelBuilder.Entity("Project.Models.Product", b =>
